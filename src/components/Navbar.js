@@ -2,13 +2,25 @@ import React from 'react'
 import styles from '../css/navbar.module.css'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
+import styled from 'styled-components'
+
+const NavStyle = styled.nav `
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 500;
+  color: white;
+  padding: 0;
+
+`
+
 
 const getLogo = graphql`
 {
     logo:file(relativePath: {eq:"mxclogo.png"}) {
       childImageSharp {
-        fluid {
-            src
+        fixed (width: 100){
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
     }
@@ -16,15 +28,17 @@ const getLogo = graphql`
   
 `  
 
-
 const Navbar = () => {
+
     const data = useStaticQuery(getLogo)
+    console.log(data);
+    
 
     return (
-        <div className={styles.navbarStart}>
-            Navbar
-            <Image fluid={data.childImageSharp.fluid}></Image>
-        </div>
+        <NavStyle>
+
+          <Image fixed={data.logo.childImageSharp.fixed}></Image>
+        </NavStyle>
     )
 }
 
