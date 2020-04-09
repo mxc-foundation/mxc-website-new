@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Hero = () => {
+const Row= () => {
     return (
         <div>
-            This is a hero
+            Row
         </div>
     )
 }
 
-export default Hero
+export default Row

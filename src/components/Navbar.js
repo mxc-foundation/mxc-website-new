@@ -1,23 +1,18 @@
-import React from 'react'
-import styles from '../css/navbar.module.css'
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
-import styled from 'styled-components'
-
-const NavStyle = styled.nav `
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  font-weight: 500;
-  color: white;
-  padding: 0;
-
-`
-
+import {StyledNav} from './styled/StyledNav'
+import { StyledMenu, MobileMenu } from './styled/StyledNav'
+import { MenuItem } from './styled/StyledNav'
+import { NavRight } from './styled/StyledNav'
+import { Link } from "gatsby"
+import links from './constants/Links'
+import socialIcons from './constants/SocialIcons'
+import { FaBars } from 'react-icons/fa'
 
 const getLogo = graphql`
 {
-    logo:file(relativePath: {eq:"mxclogo.png"}) {
+    logo:file(relativePath: {eq:"mxcLogoStars.png"}) {
       childImageSharp {
         fixed (width: 100){
             ...GatsbyImageSharpFixed_withWebp_tracedSVG
@@ -29,16 +24,34 @@ const getLogo = graphql`
 `  
 
 const Navbar = () => {
+    
+  const data = useStaticQuery(getLogo)
+  const [isOpen,setNav] = (useState(false))
+  const toggleNav = () => {
+    setNav(isOpen => !isOpen)
+  }
 
-    const data = useStaticQuery(getLogo)
-    console.log(data);
     
 
     return (
-        <NavStyle>
+        <StyledNav>
+          <Link to="/"><Image fixed={data.logo.childImageSharp.fixed}></Image></Link>
+          <MobileMenu type="button" onClick={toggleNav}>
+            <FaBars /> 
+          </MobileMenu>
+          <StyledMenu>
+            {links.map((item,index) => {
+              return (
+              <MenuItem key={index}>
+                <Link to={item.path}>{item.text}</Link></MenuItem>)
+            })}
+          </StyledMenu>
+          <NavRight>
+          {socialIcons.map((item,index)=>{
+              return <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">{item.icon}</a>
 
-          <Image fixed={data.logo.childImageSharp.fixed}></Image>
-        </NavStyle>
+            })}</NavRight>
+        </StyledNav>
     )
 }
 

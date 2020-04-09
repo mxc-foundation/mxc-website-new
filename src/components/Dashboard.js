@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Hero = () => {
+const Dashboard = () => {
     return (
         <div>
-            This is a hero
+            Dashboard
         </div>
     )
 }
 
-export default Hero
+export default Dashboard
