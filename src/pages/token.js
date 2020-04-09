@@ -1,12 +1,8 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React from 'react';
+import Layout from '../components/Global/Layout';
 
 const token = () => {
-    return (
-        <Layout>
-token page
-        </Layout>
-    )
-}
+	return <Layout>token page</Layout>;
+};
 
-export default token
+export default token;
