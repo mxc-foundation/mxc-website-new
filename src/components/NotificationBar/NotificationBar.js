@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Notification } from './NotificationBar.styled';
 
 const NotificationBar = () => {
-    return (
-        <div>
-            Notification Bar
-        </div>
-    )
-}
+	return <Notification>Our Newest Supernode is Live!</Notification>;
+};
 
-export default NotificationBar
+export default NotificationBar;

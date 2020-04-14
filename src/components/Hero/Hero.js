@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { StyledHero } from './Hero.styled';
 
-const Hero = () => {
-    return (
-        <div>
-            This is a hero
-        </div>
-    )
-}
+const Hero = ({ img, children, home }) => {
+	return (
+		<StyledHero home={home} fluid={img}>
+			{children}
+		</StyledHero>
+	);
+};
 
-export default Hero
+export default Hero;
