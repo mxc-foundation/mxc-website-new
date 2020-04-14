@@ -9,14 +9,14 @@ import { Link } from 'gatsby';
 import { FaBars } from 'react-icons/fa';
 import { StyledMenu, Menu } from './Nav.styled.js';
 import links from '../constants/Links';
-import { MenuItem } from './Nav.styled';
+import { MenuItem, Logo } from './Nav.styled';
 import styles from './navbar.module.css';
 
 const getLogo = graphql`
 	{
 		logo: file(relativePath: { eq: "mxcLogoStars.png" }) {
 			childImageSharp {
-				fixed(width: 100) {
+				fixed(width: 80) {
 					...GatsbyImageSharpFixed_withWebp_tracedSVG
 				}
 			}
@@ -33,9 +33,11 @@ const Navbar = () => {
 
 	return (
 		<StyledNav>
-			<Link to="/">
-				<Image fixed={data.logo.childImageSharp.fixed} />
-			</Link>
+			<Logo>
+				<Link to="/">
+					<Image fixed={data.logo.childImageSharp.fixed} />
+				</Link>
+			</Logo>
 			<MobileMenu type="button" onClick={toggleNav}>
 				<FaBars />
 			</MobileMenu>

@@ -5,30 +5,33 @@
  */
 
 module.exports = {
-    siteMetadata: {
-      title: "MXC Foundation",
-    },
-    plugins: [
-      `gatsby-plugin-react-helmet`,
-      `gatsby-plugin-sitemap`,
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `images`,
-          path: `${__dirname}/src/images/`,
-        },
-      },
-      {
-        resolve: 'gatsby-plugin-web-font-loader',
-        options: {
-          google: {
-            families: ['Roboto']
-          }
-        }
-      },
-      `gatsby-transformer-sharp`,
-      `gatsby-plugin-sharp`,
-      `gatsby-plugin-sass`,
-      `gatsby-plugin-styled-components`,
-    ],
-  }
+	siteMetadata: {
+		title: 'MXC Foundation'
+	},
+	plugins: [
+		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `images`,
+				path: `${__dirname}/src/images/`
+			}
+		},
+		{
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			options: {
+				fonts: [
+					{
+						family: `Roboto`,
+						variants: [ `300`, `400`, `700` ]
+					}
+				]
+			}
+		},
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
+		`gatsby-plugin-sass`,
+		`gatsby-plugin-styled-components`
+	]
+};

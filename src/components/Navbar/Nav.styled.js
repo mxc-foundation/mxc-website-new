@@ -4,7 +4,7 @@ import screens from '../constants/Screens';
 export const StyledNav = styled.nav`
 	display: flex;
 	flex-direction: row;
-	padding: .5rem .5rem 1rem;
+	padding: .5rem .5rem .5rem;
 	flex-wrap: wrap;
 	background-color: ${(props) => props.theme.navbarColor};
 	color: ${(props) => props.theme.textColor};
@@ -17,6 +17,11 @@ export const StyledNav = styled.nav`
 		color: ${(props) => props.theme.secondaryColor};
 	}
 	${screens.tablet`flex-direction:row;`};
+`;
+
+export const Logo = styled.div`
+	${screens.tablet`padding: .25rem 0 0 1rem;
+	margin-right: 1rem;`};
 `;
 
 export const StyledMenu = styled.ul`

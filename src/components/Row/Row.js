@@ -1,11 +1,35 @@
-import React from 'react'
+import React from 'react';
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import Button from './Button';
+import { StyledRow, Text, Image, Title, Paragraph } from './Row.styled';
 
-const Row= () => {
-    return (
-        <div>
-            Row
-        </div>
-    )
-}
+const Row = ({ title, text, image, url, cta, placement, boxShadow }) => {
+	const data = useStaticQuery(getImage);
+	return (
+		<StyledRow shadow={boxShadow}>
+			<Text order={placement}>
+				<Title>{title}</Title>
+				<Paragraph>{text}</Paragraph>
+				<Button url={url}>{cta}</Button>
+			</Text>
+			<Image>
+				<Img fixed={image || data.coverimage.childImageSharp.fixed} />
+			</Image>
+		</StyledRow>
+	);
+};
 
-export default Row
+const getImage = graphql`
+	{
+		coverimage: file(relativePath: { eq: "mxcLogoStars.png" }) {
+			childImageSharp {
+				fixed(width: 500) {
+					...GatsbyImageSharpFixed_withWebp_tracedSVG
+				}
+			}
+		}
+	}
+`;
+
+export default Row;
