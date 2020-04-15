@@ -1,0 +1,9 @@
+.show {
+	height: 100vh !important;
+	transition: all 0.3s linear;
+}
+
+.hide {
+	display: none;
+	transition: all 0.3 linear;
+}
