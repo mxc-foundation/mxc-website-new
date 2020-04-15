@@ -1,6 +1,6 @@
 export default [
 	{
-		logo: <FaTwitter />,
+		logo: 'logo',
 		url: '/'
 	}
 ];

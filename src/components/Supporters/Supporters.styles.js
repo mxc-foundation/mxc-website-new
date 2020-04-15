@@ -15,9 +15,11 @@ export const SupportersRow = styled.div`
 	}
 `;
 
-export const Supporter = styled.a`
+export const Supporter = styled.div`
 	flex: 1 0 10rem;
 	margin-top: 5vh;
+	width: 10vh;
+	margin: 5vh 1vw;
 `;
 
 export const TheSupporters = styled.div`

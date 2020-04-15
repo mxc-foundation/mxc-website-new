@@ -19,6 +19,13 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `supporters`,
+				path: `${__dirname}/src/supporters`
+			}
+		},
+		{
 			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {
 				fonts: [
