@@ -40,9 +40,11 @@ export default () => (
 		/>
 		<Row
 			title="MXC Mining Hardware Manufactured by MatchX"
-			text="Anyone is able to set up a LPWAN Gateway and earn MXC by sharing their network. When you join the network, MXC garautees that your MXC Mining Hardware will earn MXC during the first year."
+			text="Anyone is able to set up a LPWAN Gateway and earn MXC by sharing their network. When you join the network, MXC garauntees that your MXC Mining Hardware will earn MXC during the first year."
 			cta="Start Mining"
 			placement="0"
+			boxShadow="inset 0px 1px 15px #888;"
+			backgroundColor="#EBEFF2;"
 		/>
 		<News />
 		<Supporters />

@@ -9,6 +9,7 @@ export const StyledRow = styled.div`
 	margin: 10vh 0;
 	padding: 10vh 5vh;
 	box-shadow: ${(props) => props.shadow};
+	background-color: ${(props) => props.background};
 	${screens.tablet`
 		padding: 10vh 10vh;
 		margin: 0;
