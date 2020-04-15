@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const Button = ({ children, url }) => {
 	return (
-		<Link to="{url}">
+		<Link to={url}>
 			<StyledButton type="button">{children}</StyledButton>
 		</Link>
 	);

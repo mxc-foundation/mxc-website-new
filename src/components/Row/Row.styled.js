@@ -7,7 +7,7 @@ export const StyledRow = styled.div`
 	justify-content: center;
 	flex-wrap: wrap;
 	margin: 10vh 0;
-	padding: 10vh 5vh;
+	padding: 10vh 5vw;
 	box-shadow: ${(props) => props.shadow};
 	background-color: ${(props) => props.background};
 	${screens.tablet`

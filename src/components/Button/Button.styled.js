@@ -8,19 +8,21 @@ export const Buttons = styled.div`
 
 export const StyledButton = styled.button`
 	align-self: center;
-	background-color: rgba(0, 0, 0, 0.3);
-	border: 2px solid ${(props) => props.theme.primaryColor};
+	background-color: ${(props) => props.backgroundColor};
+	border: 2px solid ${(props) => props.borderColor};
 	text-align: center;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: ${(props) => props.theme.mainTransition};
-	margin: 0 1rem 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	padding: .75rem 3rem;
 	text-decoration: none;
-	color: ${(props) => props.theme.primaryColor};
+	color: ${(props) => props.textColor};
 	text-transform: uppercase;
 	${StyledButton}:hover {
-		background: ${(props) => props.theme.primaryColor};
-		color: ${(props) => props.theme.navbarColor};
+		background: ${(props) => props.hoverBackgroundColor};
+		color: ${(props) => props.hoverTextColor};
+		border: 2px solid ${(props) => props.hoverBorderColor};
 	}
 `;
