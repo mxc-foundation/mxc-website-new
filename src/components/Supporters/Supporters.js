@@ -1,5 +1,5 @@
 import React from 'react';
-import { SupportersRow, Supporter, TheSupporters, Text } from './Supporters.styles';
+import { SupportersRow, Supporter, TheSupporters } from './Supporters.styles';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 

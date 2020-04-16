@@ -2,9 +2,9 @@ import React from 'react';
 import { StyledDashboard } from './Dashboard.styled';
 import Widget from './Widget';
 
-const Dashboard = () => {
+const Dashboard = ({ top, minHeight }) => {
 	return (
-		<StyledDashboard>
+		<StyledDashboard topmargin={top} minheight={minHeight}>
 			<Widget title="Market Price" content="$0.004" />
 			<Widget title="Daily Transactions (Avg.)" content="300" />
 			<Widget title="Staked" content="$500,000" />

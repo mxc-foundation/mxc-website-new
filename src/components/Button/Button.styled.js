@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import img from '../../images/button_image.png';
 
-export const Buttons = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
-
 export const StyledButton = styled.button`
 	align-self: center;
 	background-color: ${(props) => props.backgroundColor};
@@ -31,4 +25,10 @@ export const StyledButton = styled.button`
 		color: ${(props) => props.hoverTextColor};
 		border: 2px solid ${(props) => props.hoverBorderColor};
 	}
+`;
+
+export const Buttons = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;

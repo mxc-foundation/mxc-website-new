@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import screens from '../constants/Screens';
 
 export const Menu = styled.ul`
 	list-style: none;

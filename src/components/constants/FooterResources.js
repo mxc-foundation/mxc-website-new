@@ -1,22 +1,18 @@
 export default [
 	{
 		path: '/',
-		text: 'Home'
+		text: 'Press Center'
 	},
 	{
-		path: '/token',
-		text: 'Token'
+		path: '/',
+		text: 'Whitepapers'
 	},
 	{
-		path: '/supernode',
-		text: 'Supernode'
+		path: '/',
+		text: 'Documentation'
 	},
 	{
-		path: '/blog',
-		text: 'Blog'
-	},
-	{
-		path: '/about',
-		text: 'About'
+		path: '/',
+		text: 'AXS Wallet'
 	}
 ];

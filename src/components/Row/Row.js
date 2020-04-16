@@ -12,10 +12,14 @@ const Row = ({ title, text, img, ctaUrl, cta, placement, boxShadow, backgroundCo
 			<Text order={placement}>
 				<TextWrapper align={textAlign}>
 					<Line />
-					<Title>{title}</Title>
-					<Paragraph>{text}</Paragraph>
+					<Title>{title || 'Lorem Ipsum'}</Title>
+					<Paragraph>
+						{text ||
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum ac diam in varius. Integer dapibus turpis eget maximus malesuada. Integer aliquam fermentum diam sed luctus.'}
+					</Paragraph>
+
 					<Button
-						url={ctaUrl}
+						url={ctaUrl || '/'}
 						bckColor="rgba(0, 0, 0, 0.3);"
 						hBckColor={(props) => props.theme.primaryColor}
 						txtColor={(props) => props.theme.textColor}
@@ -23,7 +27,7 @@ const Row = ({ title, text, img, ctaUrl, cta, placement, boxShadow, backgroundCo
 						brdrColor={(props) => props.theme.primaryColor}
 						hBrdrColor={(props) => props.theme.primaryColor}
 					>
-						{cta}
+						{cta || 'Click Here'}
 					</Button>
 				</TextWrapper>
 			</Text>
