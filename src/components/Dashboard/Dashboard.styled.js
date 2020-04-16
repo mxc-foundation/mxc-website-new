@@ -7,8 +7,8 @@ export const StyledDashboard = styled.div`
 	align-items: center;
 	justify-content: space-around;
 	box-shadow: 0px 1px 15px #888;
-	margin-top: 10vh;
-	min-height: 20vh;
+	margin-top: ${(props) => props.topmargin || '10vh'};
+	min-height: ${(props) => props.minheight || '20vh'};
 	flex-wrap: wrap;
 	${screens.tablet`flex-wrap: no-wrap;`};
 `;

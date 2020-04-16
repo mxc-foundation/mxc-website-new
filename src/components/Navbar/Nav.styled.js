@@ -26,12 +26,10 @@ export const Logo = styled.div`
 
 export const StyledMenu = styled.ul`
 	display: flex;
-	flex-direction: column;
 	list-style: none;
 	margin: 3rem 0 0 0;
 	align-items: center;
 	padding: 0;
-	display: flex;
 	justify-content: flex-start;
 	flex: 4;
 	font-weight: 500;

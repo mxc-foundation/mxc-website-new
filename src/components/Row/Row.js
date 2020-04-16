@@ -1,20 +1,40 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
-import Button from './Button';
-import { StyledRow, Text, Image, Title, Paragraph } from './Row.styled';
+import Button from '../Button/Button';
+import { StyledRow, Text, Image, Title, Paragraph, Line, ImageWrapper, TextWrapper } from './Row.styled';
 
-const Row = ({ title, text, image, ctaUrl, cta, placement, boxShadow, backgroundColor }) => {
+const Row = ({ title, text, img, ctaUrl, cta, placement, boxShadow, backgroundColor, textAlign, zIndex }) => {
 	const data = useStaticQuery(getImage);
+
 	return (
 		<StyledRow shadow={boxShadow} background={backgroundColor}>
 			<Text order={placement}>
-				<Title>{title}</Title>
-				<Paragraph>{text}</Paragraph>
-				<Button url={ctaUrl}>{cta}</Button>
+				<TextWrapper align={textAlign}>
+					<Line />
+					<Title>{title || 'Lorem Ipsum'}</Title>
+					<Paragraph>
+						{text ||
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum ac diam in varius. Integer dapibus turpis eget maximus malesuada. Integer aliquam fermentum diam sed luctus.'}
+					</Paragraph>
+
+					<Button
+						url={ctaUrl || '/'}
+						bckColor="rgba(0, 0, 0, 0.3);"
+						hBckColor={(props) => props.theme.primaryColor}
+						txtColor={(props) => props.theme.textColor}
+						hTxtColor={(props) => props.theme.navbarColor}
+						brdrColor={(props) => props.theme.primaryColor}
+						hBrdrColor={(props) => props.theme.primaryColor}
+					>
+						{cta || 'Click Here'}
+					</Button>
+				</TextWrapper>
 			</Text>
 			<Image>
-				<Img fixed={image || data.coverimage.childImageSharp.fixed} />
+				<ImageWrapper level={zIndex}>
+					<Img fluid={img || data.coverimage.childImageSharp.fluid} />
+				</ImageWrapper>
 			</Image>
 		</StyledRow>
 	);
@@ -22,10 +42,10 @@ const Row = ({ title, text, image, ctaUrl, cta, placement, boxShadow, background
 
 const getImage = graphql`
 	{
-		coverimage: file(relativePath: { eq: "mxcLogoStars.png" }) {
+		coverimage: file(relativePath: { eq: "mxcMiner.png" }) {
 			childImageSharp {
-				fixed(width: 500) {
-					...GatsbyImageSharpFixed_withWebp_tracedSVG
+				fluid {
+					...GatsbyImageSharpFluid_withWebp_tracedSVG
 				}
 			}
 		}

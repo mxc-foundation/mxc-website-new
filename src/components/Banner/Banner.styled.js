@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import screens from '../constants/Screens';
 
 export const StyledBanner = styled.div`
 	display: flex;
@@ -7,7 +8,6 @@ export const StyledBanner = styled.div`
 	flex-direction: column;
 	letter-spacing: ${(props) => props.theme.mainSpacing};
 	color: ${(props) => props.theme.headingHero};
-	margin-top: 10vh;
 	h1 {
 		font-size: 2.8rem;
 		margin-bottom: 2rem;
@@ -20,6 +20,7 @@ export const StyledBanner = styled.div`
 		margin: 0 auto;
 		margin-bottom: 2rem;
 	}
+	${screens.tablet`margin-top: 10vh;`};
 `;
 
 export const BannerDiv = styled.div``;

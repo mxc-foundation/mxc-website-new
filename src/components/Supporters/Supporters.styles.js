@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const SupportersRow = styled.div`
 	background-color: ${(props) => props.theme.lightRow};
+	border-top: 1px solid rgba(0, 0, 0, 0.25);
+
 	color: ${(props) => props.theme.lightRowText};
 	padding: 10vh 10vw;
 

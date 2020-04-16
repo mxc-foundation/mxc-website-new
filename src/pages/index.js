@@ -10,8 +10,9 @@ import Banner from '../components/Banner/Banner';
 import { Buttons } from '../components/Button/Button.styled';
 import Button from '../components/Button/Button';
 import CoverImage from '../components/Hero/CoverImage';
+import { graphql } from 'gatsby';
 
-export default () => (
+export default ({ data }) => (
 	<Layout>
 		<NotificationBar />
 		<Hero home="true">
@@ -42,13 +43,16 @@ export default () => (
 			cta="LEARN ABOUT MXC"
 			placement="0"
 			ctaUrl="/token"
+			backgroundColor="white;"
 		/>
 		<Row
 			title="Staking"
 			text="Staking provides the MXC community members with the opportunity to share in MXC Supernode profits. A small percentage of all network fees transacted through a Supernode is split between the Supernode Operator, Supernode Stakers and the MXC Foundation."
 			cta="Set a Stake"
-			placement="2"
-			boxShadow="0px 1px 15px #888;"
+			placement="1"
+			textAlign="right"
+			img={data.phonestake.childImageSharp.fluid}
+			zIndex="-1"
 		/>
 		<Row
 			title="MXC Mining Hardware Manufactured by MatchX"
@@ -62,3 +66,15 @@ export default () => (
 		<Supporters />
 	</Layout>
 );
+
+export const query = graphql`
+	query {
+		phonestake: file(relativePath: { eq: "Staking_new.png" }) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid_withWebp_tracedSVG
+				}
+			}
+		}
+	}
+`;
