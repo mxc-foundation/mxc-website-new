@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import screens from '../constants/Screens';
 
 export const NewsRow = styled.div`
-	background-color: ${(props) => props.theme.navbarColor};
+	background-color: ${(props) => props.theme.lightRow};
 	min-height: 20vh;
 	color: ${(props) => props.theme.textColor};
 	padding: 10vh 7vw;
+	border-top: 1px solid rgba(0, 0, 0, 0.25);
+	min-height: 80vh;
 `;
 
 export const TitleBar = styled.div`
