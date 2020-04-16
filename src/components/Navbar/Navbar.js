@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
-import { StyledNav } from './Nav.styled';
-import { MobileMenu } from './Nav.styled';
-import { NavRight } from './Nav.styled';
-import socialIcons from '../constants/SocialIcons';
+import { StyledNav, MobileMenu, StyledMenu, MenuItem, Logo } from './Nav.styled';
 import { Link } from 'gatsby';
 import { FaBars } from 'react-icons/fa';
-import { StyledMenu, Menu } from './Nav.styled.js';
 import links from '../constants/Links';
-import { MenuItem, Logo } from './Nav.styled';
 import styles from './navbar.module.css';
 
 const getLogo = graphql`

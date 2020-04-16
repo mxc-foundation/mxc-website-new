@@ -5,7 +5,6 @@ import Img from 'gatsby-image';
 
 const Supporters = () => {
 	const data = useStaticQuery(query);
-	console.log(data);
 
 	return (
 		<SupportersRow>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import screens from '../constants/Screens';
 
 export const StyledHero = styled.div`
 	display: flex;
@@ -9,11 +10,16 @@ export const StyledHero = styled.div`
 	opacity: 1 !important;
 	display: flex;
 	justify-content: center;
-	min-height: 100vh;
+	height: 100vh;
 	align-items: center;
 `;
 
 export const StyledCover = styled.div`
+	display: none;
+
+	${screens.tablet`	
+	display: block;
 	margin-bottom: -10vh;
 	flex: 1;
+	width: 90vw;`};
 `;

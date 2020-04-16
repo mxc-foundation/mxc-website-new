@@ -4,6 +4,7 @@ export const darkTheme = {
 	textColor: 'white;',
 	backgroundColor: '100E28;',
 	darkRow: '#EBEFF2;',
+	darkRowText: 'white',
 	lightRow: 'white;',
 	lightRowText: 'black',
 	buttonOutline: 'black;',

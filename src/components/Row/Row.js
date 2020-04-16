@@ -14,7 +14,7 @@ const Row = ({ title, text, image, ctaUrl, cta, placement, boxShadow, background
 				<Button url={ctaUrl}>{cta}</Button>
 			</Text>
 			<Image>
-				<Img fixed={image || data.coverimage.childImageSharp.fixed} />
+				<Img fluid={image || data.coverimage.childImageSharp.fluid} />
 			</Image>
 		</StyledRow>
 	);
@@ -24,8 +24,8 @@ const getImage = graphql`
 	{
 		coverimage: file(relativePath: { eq: "mxcLogoStars.png" }) {
 			childImageSharp {
-				fixed(width: 500) {
-					...GatsbyImageSharpFixed_withWebp_tracedSVG
+				fluid {
+					...GatsbyImageSharpFluid_withWebp_tracedSVG
 				}
 			}
 		}

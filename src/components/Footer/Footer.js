@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Link from 'gatsby';
+import { StyledFooter, Menu, List } from './Footer.styles';
 
 const Footer = () => {
-    return (
-        <div>
-            Footer
-        </div>
-    )
-}
+	return <StyledFooter>Footer</StyledFooter>;
+};
 
-export default Footer
+export default Footer;

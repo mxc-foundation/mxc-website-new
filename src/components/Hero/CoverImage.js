@@ -7,8 +7,8 @@ const getImage = graphql`
 	{
 		coverimage: file(relativePath: { eq: "windowapp.png" }) {
 			childImageSharp {
-				fixed(width: 1200) {
-					...GatsbyImageSharpFixed_withWebp_tracedSVG
+				fluid {
+					...GatsbyImageSharpFluid_withWebp_tracedSVG
 				}
 			}
 		}
@@ -19,7 +19,7 @@ const CoverImage = () => {
 	const data = useStaticQuery(getImage);
 	return (
 		<StyledCover>
-			<Img fixed={data.coverimage.childImageSharp.fixed} alt="Screenshots from MXC Supernodes" />
+			<Img fluid={data.coverimage.childImageSharp.fluid} alt="Screenshots from MXC Supernodes" />
 		</StyledCover>
 	);
 };

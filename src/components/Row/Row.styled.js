@@ -17,7 +17,10 @@ export const StyledRow = styled.div`
 	`};
 `;
 
-export const Image = styled.div``;
+export const Image = styled.div`
+	width: 90vw;
+	${screens.tablet`width: 40vw;`};
+`;
 
 export const Title = styled.h2`
 	color: black;
