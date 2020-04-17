@@ -43,7 +43,6 @@ export default ({ data }) => (
 			cta="LEARN ABOUT MXC"
 			placement="0"
 			ctaUrl="/token"
-			backgroundColor="white;"
 		/>
 		<Row
 			title="Staking"
