@@ -1,23 +1,8 @@
 import React from 'react';
-import { Container, StyledWhitepapers, Widget, WidgetTitle, WidgetText, Line } from './Whitepapers.styled';
-import BackgroundImage from 'gatsby-background-image';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Container, StyledWhitepapers } from './Whitepapers.styled';
+import Widget from './Widget';
 
-const getImage = graphql`
-	{
-		defaultBcg: file(relativePath: { eq: "BG02.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid_withWebp_tracedSVG
-				}
-			}
-		}
-	}
-`;
-
-const Whitepapers = ({ img }) => {
-	const data = useStaticQuery(getImage);
-
+const Whitepapers = () => {
 	return (
 		<Container>
 			<h2>Whitepapers</h2>
@@ -26,34 +11,10 @@ const Whitepapers = ({ img }) => {
 				open-source wireless communication. Our one-pagers transform the "tech talk" into everyday language.
 			</p>
 			<StyledWhitepapers>
-				<Widget>
-					<BackgroundImage fluid={img || data.defaultBcg.childImageSharp.fluid}>
-						<Line />
-						<WidgetTitle>Title </WidgetTitle>
-						<WidgetText>English | Korean | Chinese | Jeffish</WidgetText>
-					</BackgroundImage>
-				</Widget>
-				<Widget>
-					<BackgroundImage fluid={img || data.defaultBcg.childImageSharp.fluid}>
-						<Line />
-						<WidgetTitle>Title </WidgetTitle>
-						<WidgetText>English | Korean | Chinese | Jeffish</WidgetText>
-					</BackgroundImage>
-				</Widget>
-				<Widget>
-					<BackgroundImage fluid={img || data.defaultBcg.childImageSharp.fluid}>
-						<Line />
-						<WidgetTitle>Title </WidgetTitle>
-						<WidgetText>English | Korean | Chinese | Jeffish</WidgetText>
-					</BackgroundImage>
-				</Widget>
-				<Widget>
-					<BackgroundImage fluid={img || data.defaultBcg.childImageSharp.fluid}>
-						<Line />
-						<WidgetTitle>Title </WidgetTitle>
-						<WidgetText>English | Korean | Chinese | Jeffish</WidgetText>
-					</BackgroundImage>
-				</Widget>
+				<Widget />
+				<Widget />
+				<Widget />
+				<Widget />
 			</StyledWhitepapers>
 		</Container>
 	);
